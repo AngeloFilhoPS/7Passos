@@ -7,19 +7,24 @@ import {
   TouchableOpacity
 } from 'react-native'
 
-function StepTwo({ navigation }) {
+function StepFour({navigation}) {
 
   return (
     <View style={styles.viewMain}>
 
-      <Text style={styles.mainTitle}>O pecado nos{"\n"}separou{"\n"}de</Text>
-      <Text style={styles.godTitle}>DEUS   ⃤</Text>
+      <Text style={styles.mainTitle}>Deus veio ao mundo{"\n"}em forma de{"\n"}JESUS</Text>
+      <Text style={styles.godTitle}>DEUS   ⃤ ⬇</Text>
       <View style={styles.lineStyle} />
-      <Text style={styles.mainTitle}>👿👨💔👩</Text>
-      <Text style={styles.verse}>Romanos 3:23; 6:23</Text>
+    
+      <Image
+        style={styles.jesus}
+        source={require('../../img/jesus-cristo.png')}
+      />
+
+      <Text style={styles.verse}>João 1:14</Text>
 
 
-      <TouchableOpacity style={styles.btnStart} onPress={() => { navigation.navigate('3º Passo') }}>
+      <TouchableOpacity style={styles.btnStart} onPress={() => { navigation.navigate('4º Passo')}}>
         <Text style={styles.txtStart}>Próximo</Text>
       </TouchableOpacity>
     </View>)
@@ -31,10 +36,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#409fff',
 
   },
-  cruz: {
-    width: 50,
-    height: 50,
-    marginTop: 100
+  jesus: {
+    width: '30%',
+    height: '30%',
+    marginTop: 15
   },
   mainTitle: {
     marginTop: 80,
@@ -43,11 +48,26 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     textAlign: 'center',
     fontFamily: ''
+  }, peopleEmoji1: {
+    marginTop: 30,
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+    textAlign: 'center',
+    fontFamily: ''
+  },
+   peopleEmoji: {
+    marginTop: 1,
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+    textAlign: 'center',
+    fontFamily: ''
   },
   godTitle: {
-    marginTop: 10,
+    marginTop: 50,
     marginLeft: '10%',
-    fontSize: 40,
+    fontSize: 30,
     fontWeight: 'bold',
     color: '#FFFFFF',
     textAlign: 'center',
@@ -82,4 +102,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default StepTwo
+export default StepFour
