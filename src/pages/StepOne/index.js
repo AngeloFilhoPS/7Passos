@@ -7,18 +7,19 @@ import {
   TouchableOpacity
 } from 'react-native'
 
-function StepOne() {
+function StepOne({navigation}) {
  
   return (
     <View style={styles.viewMain}>
 
-      <Text style={styles.mainTitle}>7{"\n"}Passos{"\n"}Para a {"\n"}Vida{"\n"}Eterna</Text>
-      <Image
-        style={styles.cruz}
-        source={require('../../img/passo.png')}
-      />
-      <TouchableOpacity style={styles.btnStart} onPress={()=>{}}>
-        <Text style={styles.txtStart}>Toque{"\n"}para começar</Text>
+      <Text style={styles.mainTitle}>Deus criou{"\n"}o homem para{"\n"}AMÁ-LO</Text>
+
+      <Text style={styles.mainTitle}>👨💕👩</Text>
+      <Text style={styles.verse}>Gênesis 1:27</Text>
+
+    
+      <TouchableOpacity style={styles.btnStart} onPress={()=>{navigation.navigate('2º Passo')}}>
+        <Text style={styles.txtStart}>Próximo</Text>
       </TouchableOpacity>
     </View>)
 }
@@ -42,13 +43,20 @@ const styles = StyleSheet.create({
     textAlign:'center',
     fontFamily:''
   },
+  verse: {
+    marginTop: 15,
+    fontSize: 20,
+    fontWeight: 'bold',
+    color:'#FFFFFF',
+    textAlign:'center',
+  },
   btnStart: {
     backgroundColor: '#000',
     borderWidth: 2,
-    padding: 12,
+    padding: 5,
     borderRadius: 50,
     marginTop:100,
-    height:'10%',
+    height:'5%',
     width:'30%'
   },
   txtStart: {

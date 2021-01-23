@@ -17,7 +17,7 @@ function Home({navigation}) {
         style={styles.cruz}
         source={require('../../img/passo.png')}
       />
-      <TouchableOpacity style={styles.btnStart} onPress={()=>{navigation.navigate('Passo 1')}}>
+      <TouchableOpacity style={styles.btnStart} onPress={()=>{navigation.navigate('1º Passo')}}>
         <Text style={styles.txtStart}>Toque{"\n"}para começar</Text>
       </TouchableOpacity>
     </View>)
