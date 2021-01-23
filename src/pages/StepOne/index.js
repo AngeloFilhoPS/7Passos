@@ -7,8 +7,8 @@ import {
   TouchableOpacity
 } from 'react-native'
 
-function Home({navigation}) {
-  
+function StepOne() {
+ 
   return (
     <View style={styles.viewMain}>
 
@@ -17,7 +17,7 @@ function Home({navigation}) {
         style={styles.cruz}
         source={require('../../img/passo.png')}
       />
-      <TouchableOpacity style={styles.btnStart} onPress={()=>{navigation.navigate('Passo 1')}}>
+      <TouchableOpacity style={styles.btnStart} onPress={()=>{}}>
         <Text style={styles.txtStart}>Toque{"\n"}para começar</Text>
       </TouchableOpacity>
     </View>)
@@ -59,4 +59,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default Home
+export default StepOne
