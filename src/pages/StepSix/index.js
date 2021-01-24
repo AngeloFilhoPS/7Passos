@@ -7,24 +7,23 @@ import {
   TouchableOpacity
 } from 'react-native'
 
-function StepFour({navigation}) {
+function StepSix({navigation}) {
 
   return (
     <View style={styles.viewMain}>
 
-      <Text style={styles.mainTitle}>Deus veio ao mundo{"\n"}em forma de{"\n"}JESUS</Text>
-      <Text style={styles.godTitle}>DEUS   ⃤ ⬇</Text>
-      <View style={styles.lineStyle} />
+      <Text style={styles.mainTitle}>
+      Jesus destruiu{"\n"} a morte quando{"\n"}ressuscitou.</Text>
     
       <Image
         style={styles.jesus}
-        source={require('../../img/jesus-cristo.png')}
+        source={require('../../img/jesus-heaven.png')}
       />
 
-      <Text style={styles.verse}>João 1:14</Text>
+      <Text style={styles.verse}>Romanos 8:11</Text>
 
 
-      <TouchableOpacity style={styles.btnStart} onPress={() => { navigation.navigate('5º Passo')}}>
+      <TouchableOpacity style={styles.btnStart} onPress={() => { navigation.navigate('7º Passo')}}>
         <Text style={styles.txtStart}>Próximo</Text>
       </TouchableOpacity>
     </View>)
@@ -37,8 +36,8 @@ const styles = StyleSheet.create({
 
   },
   jesus: {
-    width: '30%',
-    height: '30%',
+    width: '80%',
+    height: '40%',
     marginTop: 15
   },
   mainTitle: {
@@ -79,6 +78,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#FFFFFF',
     textAlign: 'center',
+   
   },
   btnStart: {
     backgroundColor: '#000',
@@ -102,4 +102,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default StepFour
+export default StepSix

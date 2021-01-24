@@ -7,25 +7,27 @@ import {
   TouchableOpacity
 } from 'react-native'
 
-function StepFour({navigation}) {
+function StepSeven({ navigation }) {
 
   return (
     <View style={styles.viewMain}>
 
-      <Text style={styles.mainTitle}>Deus veio ao mundo{"\n"}em forma de{"\n"}JESUS</Text>
-      <Text style={styles.godTitle}>DEUS   ⃤ ⬇</Text>
-      <View style={styles.lineStyle} />
-    
+      <Text style={styles.mainTitle}>
+        Agora o sétimo passo{"\n"} deve ser dado{"\n"}por você.</Text>
+      <Text style={styles.verse}>João 1:12/ Romanos 10:9</Text>
+      <TouchableOpacity style={{marginTop:15,backgroundColor:'#87ceeb', padding:15, borderRadius:15, borderColor:'#fff' ,borderWidth:1}}>
+        <Text style={styles.question}>
+          Você precisa decidir agora!{"\n"} Você quer?</Text>
+      </TouchableOpacity>
       <Image
         style={styles.jesus}
-        source={require('../../img/jesus-cristo.png')}
+        source={require('../../img/jesus-hug.png')}
       />
 
-      <Text style={styles.verse}>João 1:14</Text>
 
 
-      <TouchableOpacity style={styles.btnStart} onPress={() => { navigation.navigate('5º Passo')}}>
-        <Text style={styles.txtStart}>Próximo</Text>
+      <TouchableOpacity style={styles.btnStart} onPress={() => { navigation.navigate('7 Passos') }}>
+        <Text style={styles.txtStart}>Home</Text>
       </TouchableOpacity>
     </View>)
 }
@@ -37,18 +39,27 @@ const styles = StyleSheet.create({
 
   },
   jesus: {
-    width: '30%',
-    height: '30%',
-    marginTop: 15
+    width: '80%',
+    height: '50%',
+    marginTop: 15,
+    borderRadius: 50
   },
   mainTitle: {
-    marginTop: 80,
-    fontSize: 40,
+    marginTop: 20,
+    fontSize: 25,
+    marginHorizontal: 12,
     fontWeight: 'bold',
     color: '#FFFFFF',
     textAlign: 'center',
     fontFamily: ''
-  }, peopleEmoji1: {
+  },
+  question: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#Fff',
+    textAlign: 'center',
+  },
+  peopleEmoji1: {
     marginTop: 30,
     fontSize: 18,
     fontWeight: 'bold',
@@ -56,7 +67,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: ''
   },
-   peopleEmoji: {
+  peopleEmoji: {
     marginTop: 1,
     fontSize: 18,
     fontWeight: 'bold',
@@ -102,4 +113,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default StepFour
+export default StepSeven

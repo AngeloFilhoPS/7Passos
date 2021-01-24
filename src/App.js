@@ -1,10 +1,12 @@
 import React from 'react'
 import Routes from './routes';
+import { StatusBar} from 'react-native';
+
 function App() {
- 
+
   return (
-<Routes/>
-    )
+      <Routes />
+  )
 }
 
 export default App

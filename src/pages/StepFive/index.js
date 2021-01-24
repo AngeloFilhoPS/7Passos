@@ -7,24 +7,22 @@ import {
   TouchableOpacity
 } from 'react-native'
 
-function StepFour({navigation}) {
+function StepFive({ navigation }) {
 
   return (
     <View style={styles.viewMain}>
 
-      <Text style={styles.mainTitle}>Deus veio ao mundo{"\n"}em forma de{"\n"}JESUS</Text>
-      <Text style={styles.godTitle}>DEUS   ⃤ ⬇</Text>
-      <View style={styles.lineStyle} />
-    
+      <Text style={styles.mainTitle}> Jesus morreu{"\n"}para pagar{"\n"}a nossa dívida</Text>
+
       <Image
         style={styles.jesus}
-        source={require('../../img/jesus-cristo.png')}
+        source={require('../../img/jesus-cruz.png')}
       />
 
-      <Text style={styles.verse}>João 1:14</Text>
+      <Text style={styles.verse}>I Coríntios 15:3/ Romanos 5:8</Text>
 
 
-      <TouchableOpacity style={styles.btnStart} onPress={() => { navigation.navigate('5º Passo')}}>
+      <TouchableOpacity style={styles.btnStart} onPress={() => { navigation.navigate('6º Passo') }}>
         <Text style={styles.txtStart}>Próximo</Text>
       </TouchableOpacity>
     </View>)
@@ -37,8 +35,8 @@ const styles = StyleSheet.create({
 
   },
   jesus: {
-    width: '30%',
-    height: '30%',
+    width: '70%',
+    height: '40%',
     marginTop: 15
   },
   mainTitle: {
@@ -56,7 +54,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: ''
   },
-   peopleEmoji: {
+  peopleEmoji: {
     marginTop: 1,
     fontSize: 18,
     fontWeight: 'bold',
@@ -102,4 +100,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default StepFour
+export default StepFive
