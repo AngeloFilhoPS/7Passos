@@ -16,7 +16,7 @@ function StepFive({ navigation }) {
 
       <Image
         style={styles.jesus}
-        source={require('../../img/jesus-cruz.png')}
+        source={{uri:'https://www.lifepng.com/wp-content/uploads/2020/09/Cross-Jesus-Illustration-png-hd.png'}}
       />
 
       <Text style={styles.verse}>I Coríntios 15:3/ Romanos 5:8</Text>

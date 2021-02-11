@@ -1,4 +1,4 @@
-package com.passos;
+package com.setepassos;
 
 import com.facebook.react.ReactActivity;
 

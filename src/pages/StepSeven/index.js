@@ -21,7 +21,7 @@ function StepSeven({ navigation }) {
       </TouchableOpacity>
       <Image
         style={styles.jesus}
-        source={require('../../img/jesus-hug.png')}
+        source={{uri:'https://www.nicepng.com/png/detail/3-31225_free-icons-png-jesus-hug-png.png'}}
       />
 
 

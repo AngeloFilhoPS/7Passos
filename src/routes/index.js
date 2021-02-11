@@ -16,7 +16,7 @@ const Stack = createStackNavigator();
 function Routes() {
     const styles = {
         headerStyle: {
-            backgroundColor: '#099',
+            backgroundColor: '#000',
         },
         headerTintColor: '#fff',
         headerTitleStyle: {

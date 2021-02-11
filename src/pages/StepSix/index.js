@@ -17,7 +17,7 @@ function StepSix({navigation}) {
     
       <Image
         style={styles.jesus}
-        source={require('../../img/jesus-heaven.png')}
+        source={{uri:'https://i1.wp.com/pastoralmaranata.org.br/wp-content/uploads/2017/03/Pascoa-Jesus.png?fit=295%2C386'}}
       />
 
       <Text style={styles.verse}>Romanos 8:11</Text>
@@ -38,7 +38,9 @@ const styles = StyleSheet.create({
   jesus: {
     width: '80%',
     height: '40%',
-    marginTop: 15
+    marginTop: 15,
+    resizeMode:'contain',
+    borderRadius:60,
   },
   mainTitle: {
     marginTop: 80,

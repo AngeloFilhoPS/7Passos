@@ -7,7 +7,7 @@ import {
   TouchableOpacity
 } from 'react-native'
 
-function StepFour({navigation}) {
+function StepFour({ navigation }) {
 
   return (
     <View style={styles.viewMain}>
@@ -15,16 +15,16 @@ function StepFour({navigation}) {
       <Text style={styles.mainTitle}>Deus veio ao mundo{"\n"}em forma de{"\n"}JESUS</Text>
       <Text style={styles.godTitle}>DEUS   ⃤ ⬇</Text>
       <View style={styles.lineStyle} />
-    
+
       <Image
         style={styles.jesus}
-        source={require('../../img/jesus-cristo.png')}
+        source={{ uri: 'https://www.mixadesivos.com.br/simulador/69295f5f6bd7d1a08da4919b5bb95bff/1_21_181121034809_adesivo-de-parede-jesus-cristo.png' }}
       />
 
       <Text style={styles.verse}>João 1:14</Text>
 
 
-      <TouchableOpacity style={styles.btnStart} onPress={() => { navigation.navigate('5º Passo')}}>
+      <TouchableOpacity style={styles.btnStart} onPress={() => { navigation.navigate('5º Passo') }}>
         <Text style={styles.txtStart}>Próximo</Text>
       </TouchableOpacity>
     </View>)
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: ''
   },
-   peopleEmoji: {
+  peopleEmoji: {
     marginTop: 1,
     fontSize: 18,
     fontWeight: 'bold',
