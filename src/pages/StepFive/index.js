@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Text,
   View,
@@ -6,20 +6,30 @@ import {
   StyleSheet,
   TouchableOpacity
 } from 'react-native'
+import ModalVerse from '../../components/Modal'
+
 
 function StepFive({ navigation }) {
+  const [visible, setVisible] = useState(false)
+
 
   return (
     <View style={styles.viewMain}>
+      <ModalVerse
+        visible={visible}
+        setVisible={setVisible}
+        verse={' "Pois o que primeiramente lhes transmiti foi o que recebi: que Cristo morreu pelos nossos pecados, segundo as Escrituras,\n\n "Mas Deus demonstra seu amor por nós: Cristo morreu em nosso favor quando ainda éramos pecadores." '}
+      />
 
       <Text style={styles.mainTitle}> Jesus morreu{"\n"}para pagar{"\n"}a nossa dívida</Text>
 
       <Image
         style={styles.jesus}
-        source={{uri:'https://www.lifepng.com/wp-content/uploads/2020/09/Cross-Jesus-Illustration-png-hd.png'}}
+        source={{ uri: 'https://www.lifepng.com/wp-content/uploads/2020/09/Cross-Jesus-Illustration-png-hd.png' }}
       />
-
-      <Text style={styles.verse}>I Coríntios 15:3/ Romanos 5:8</Text>
+      <TouchableOpacity onPress={() => { setVisible(true) }}>
+        <Text style={styles.verse}>I Coríntios 15:3/ Romanos 5:8</Text>
+      </TouchableOpacity>
 
 
       <TouchableOpacity style={styles.btnStart} onPress={() => { navigation.navigate('6º Passo') }}>

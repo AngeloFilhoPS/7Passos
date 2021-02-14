@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {
   Text,
   View,
@@ -6,11 +6,19 @@ import {
   StyleSheet,
   TouchableOpacity
 } from 'react-native'
+import ModalVerse from '../../components/Modal'
 
 function StepFour({ navigation }) {
+  const [visible, setVisible] = useState(false)
+
 
   return (
     <View style={styles.viewMain}>
+      <ModalVerse
+        visible={visible}
+        setVisible={setVisible}
+        verse={' "Aquele que é a Palavra tornou-se carne e viveu entre nós. Vimos a sua glória, glória como do Unigênito vindo do Pai, cheio de graça e de verdade." '}
+      />
 
       <Text style={styles.mainTitle}>Deus veio ao mundo{"\n"}em forma de{"\n"}JESUS</Text>
       <Text style={styles.godTitle}>DEUS   ⃤ ⬇</Text>
@@ -21,7 +29,9 @@ function StepFour({ navigation }) {
         source={{ uri: 'https://www.mixadesivos.com.br/simulador/69295f5f6bd7d1a08da4919b5bb95bff/1_21_181121034809_adesivo-de-parede-jesus-cristo.png' }}
       />
 
-      <Text style={styles.verse}>João 1:14</Text>
+      <TouchableOpacity onPress={() => { setVisible(true) }}>
+        <Text style={styles.verse}>João 1:14</Text>
+      </TouchableOpacity>
 
 
       <TouchableOpacity style={styles.btnStart} onPress={() => { navigation.navigate('5º Passo') }}>

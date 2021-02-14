@@ -1,22 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Text,
   View,
   Image,
   StyleSheet,
-  TouchableOpacity
+  TouchableOpacity,
+  Modal
 } from 'react-native'
+import ModalVerse from '../../components/Modal'
 
 function StepTwo({ navigation }) {
+  const [visible, setVisible] = useState(false)
+
 
   return (
+
     <View style={styles.viewMain}>
+      <ModalVerse
+        visible={visible}
+        setVisible={setVisible}
+        verse={' "...pois todos pecaram e estão destituídos da glória de Deus,\n \n "Pois o salário do pecado é a morte, mas o dom gratuito de Deus é a vida eterna em Cristo Jesus, nosso Senhor." '}
+      />
+
 
       <Text style={styles.mainTitle}>O pecado nos{"\n"}separou{"\n"}de</Text>
       <Text style={styles.godTitle}>DEUS   ⃤</Text>
       <View style={styles.lineStyle} />
       <Text style={styles.mainTitle}>👿👨💔👩</Text>
-      <Text style={styles.verse}>Romanos 3:23; 6:23</Text>
+      <TouchableOpacity onPress={() => { setVisible(true) }}>
+        <Text style={styles.verse}>Romanos 3:23; 6:23</Text>
+      </TouchableOpacity>
+
 
 
       <TouchableOpacity style={styles.btnStart} onPress={() => { navigation.navigate('3º Passo') }}>
@@ -25,11 +39,35 @@ function StepTwo({ navigation }) {
     </View>)
 }
 const styles = StyleSheet.create({
+  verseModal: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    marginTop: 15
+  },
+  btnTxt: {
+    fontSize: 14,
+    fontWeight: 'bold'
+  },
+  btnExit: {
+    alignSelf: 'flex-end',
+    marginBottom: 5
+  },
   viewMain: {
     flex: 1,
     alignItems: 'center',
     backgroundColor: '#409fff',
 
+  }, modalView: {
+    marginTop: '50%',
+    alignSelf: 'center',
+    height: '25%',
+    width: '60%',
+    backgroundColor: '#ddd',
+    paddingHorizontal: 15,
+    paddingTop: 15,
+    borderRadius: 15,
+    borderWidth: 2,
+    borderColor: '#000'
   },
   cruz: {
     width: 50,

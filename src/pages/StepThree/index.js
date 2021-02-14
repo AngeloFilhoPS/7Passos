@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Text,
   View,
@@ -6,11 +6,20 @@ import {
   StyleSheet,
   TouchableOpacity
 } from 'react-native'
+import ModalVerse from '../../components/Modal'
 
-function StepThree({navigation}) {
+
+function StepThree({ navigation }) {
+  const [visible, setVisible] = useState(false)
+
 
   return (
     <View style={styles.viewMain}>
+      <ModalVerse
+        visible={visible}
+        setVisible={setVisible}
+        verse={' "Porque Deus tanto amou o mundo que deu o seu Filho Unigênito, para que todo o que nele crer não pereça, mas tenha a vida eterna." '}
+      />
 
       <Text style={styles.mainTitle}>O AMOR{"\n"}de Deus é{"\n"}persistente</Text>
       <Text style={styles.godTitle}>DEUS   ⃤ ⬇</Text>
@@ -21,11 +30,12 @@ function StepThree({navigation}) {
       <Text style={styles.peopleEmoji}>👨👩👨👩👨👩👨👩👨👩👨👩</Text>
       <Text style={styles.peopleEmoji}>👨👩👨👩👨👩👨👩👨👩👨👩👨👩👨👩</Text>
       <Text style={styles.peopleEmoji}>EU e VOCÊ</Text>
+      <TouchableOpacity onPress={() => { setVisible(true) }}>
+        <Text style={styles.verse}>João 3:16</Text>
+      </TouchableOpacity>
 
-      <Text style={styles.verse}>João 3:16</Text>
 
-
-      <TouchableOpacity style={styles.btnStart} onPress={() => { navigation.navigate('4º Passo')}}>
+      <TouchableOpacity style={styles.btnStart} onPress={() => { navigation.navigate('4º Passo') }}>
         <Text style={styles.txtStart}>Próximo</Text>
       </TouchableOpacity>
     </View>)
@@ -57,7 +67,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: ''
   },
-   peopleEmoji: {
+  peopleEmoji: {
     marginTop: 1,
     fontSize: 18,
     fontWeight: 'bold',

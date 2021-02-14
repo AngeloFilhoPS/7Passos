@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Text,
   View,
@@ -6,24 +6,37 @@ import {
   StyleSheet,
   TouchableOpacity
 } from 'react-native'
+import ModalVerse from '../../components/Modal'
+
 
 function StepSeven({ navigation }) {
+  const [visible, setVisible] = useState(false)
+
 
   return (
     <View style={styles.viewMain}>
+      <ModalVerse
+        visible={visible}
+        setVisible={setVisible}
+        verse={' "Contudo, aos que o receberam, aos que creram em seu nome, deu-lhes o direito de se tornarem filhos de Deus,\n \n "Se você confessar com a sua boca que Jesus é Senhor e crer em seu coração que Deus o ressuscitou dentre os mortos, será salvo. " '}
+      />
 
       <Text style={styles.mainTitle}>
         Agora o sétimo passo{"\n"} deve ser dado{"\n"}por você.</Text>
-      <Text style={styles.verse}>João 1:12/ Romanos 10:9</Text>
-      <TouchableOpacity style={{marginTop:15,backgroundColor:'#87ceeb', padding:15, borderRadius:15, borderColor:'#fff' ,borderWidth:1}}>
+
+
+      <TouchableOpacity style={{ marginTop: 15, backgroundColor: '#87ceeb', padding: 15, borderRadius: 15, borderColor: '#fff', borderWidth: 1 }}>
         <Text style={styles.question}>
           Você precisa decidir agora!{"\n"} Você quer?</Text>
       </TouchableOpacity>
       <Image
         style={styles.jesus}
-        source={{uri:'https://www.nicepng.com/png/detail/3-31225_free-icons-png-jesus-hug-png.png'}}
+        source={{ uri: 'https://www.nicepng.com/png/detail/3-31225_free-icons-png-jesus-hug-png.png' }}
       />
+      <TouchableOpacity onPress={() => { setVisible(true) }}>
 
+        <Text style={styles.verse}>João 1:12/ Romanos 10:9</Text>
+      </TouchableOpacity>
 
 
       <TouchableOpacity style={styles.btnStart} onPress={() => { navigation.navigate('7 Passos') }}>

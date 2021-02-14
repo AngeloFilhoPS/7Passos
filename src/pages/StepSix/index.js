@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Text,
   View,
@@ -6,24 +6,35 @@ import {
   StyleSheet,
   TouchableOpacity
 } from 'react-native'
+import ModalVerse from '../../components/Modal'
 
-function StepSix({navigation}) {
+
+function StepSix({ navigation }) {
+  const [visible, setVisible] = useState(false)
+
 
   return (
     <View style={styles.viewMain}>
-
-      <Text style={styles.mainTitle}>
-      Jesus destruiu{"\n"} a morte quando{"\n"}ressuscitou.</Text>
-    
-      <Image
-        style={styles.jesus}
-        source={{uri:'https://i1.wp.com/pastoralmaranata.org.br/wp-content/uploads/2017/03/Pascoa-Jesus.png?fit=295%2C386'}}
+      <ModalVerse
+        visible={visible}
+        setVisible={setVisible}
+        verse={' "E, se o Espírito daquele que ressuscitou Jesus dentre os mortos habita em vocês, aquele que ressuscitou a Cristo dentre os mortos também dará vida a seus corpos mortais, por meio do seu Espírito, que habita em vocês." '}
       />
 
-      <Text style={styles.verse}>Romanos 8:11</Text>
+      <Text style={styles.mainTitle}>
+        Jesus destruiu{"\n"} a morte quando{"\n"}ressuscitou.</Text>
+
+      <Image
+        style={styles.jesus}
+        source={{ uri: 'https://i1.wp.com/pastoralmaranata.org.br/wp-content/uploads/2017/03/Pascoa-Jesus.png?fit=295%2C386' }}
+      />
+
+      <TouchableOpacity onPress={() => { setVisible(true) }}>
+        <Text style={styles.verse}>Romanos 8:11</Text>
+      </TouchableOpacity>
 
 
-      <TouchableOpacity style={styles.btnStart} onPress={() => { navigation.navigate('7º Passo')}}>
+      <TouchableOpacity style={styles.btnStart} onPress={() => { navigation.navigate('7º Passo') }}>
         <Text style={styles.txtStart}>Próximo</Text>
       </TouchableOpacity>
     </View>)
@@ -39,8 +50,8 @@ const styles = StyleSheet.create({
     width: '80%',
     height: '40%',
     marginTop: 15,
-    resizeMode:'contain',
-    borderRadius:60,
+    resizeMode: 'contain',
+    borderRadius: 60,
   },
   mainTitle: {
     marginTop: 80,
@@ -57,7 +68,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: ''
   },
-   peopleEmoji: {
+  peopleEmoji: {
     marginTop: 1,
     fontSize: 18,
     fontWeight: 'bold',
@@ -80,7 +91,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#FFFFFF',
     textAlign: 'center',
-   
+
   },
   btnStart: {
     backgroundColor: '#000',
